@@ -1,0 +1,46 @@
+# want to grab the data from the UIUC Coronavirus Data Website
+#   Could potentially request a key to access the data easier
+# otherwise, will need to somehow manually select a button on the webpage to download it but then its kind of weird
+# alternative method would be to actually getting the data by hovering over it but that might be impractical
+
+# (8PM) currently have set up beautifulsoup to collect the HTML but that isn't necessarily super useful
+# (820) found the button on the webpage to download the csv file but beautiful soup cannot interact with web pages well
+#   will need to use a different library to interact with the said web page
+#   might also have an issue with saving the download to the server itself?
+# pivot towards a tool that interacts with webpage over scraping the html
+# (830) started implementation of selenium
+#   considering downloading all of the csv file download buttons
+# (920) got selenium running and it goes to webpage but encountering error
+#   it keeps going to a login page and I am not sure why
+#   potential solution is creating an account and just kinda going with it
+# (945) solved the issue with logging in and now directs to actual website for webscraping!
+#   the solution was changing the URL to the one linked at the top ;D
+
+# (9PM) working on it while guys play mario kart
+#   had issues with it loading because of geckodriver issue
+#   issue was solved by running "brew install geckodriver" in terminal
+
+# (825) found a new way to interact with a webpage, can use the tab key to potentially enable the html
+#   that was previously not visible but hope it is
+# selenium set up
+
+# (11AM) found out that the menus are visible but the buttons are not
+#   solution may be to get the coordinate of the menus and putting the "mouse there" the enable JS
+# (1130) moved mouse to the menu of dataset I want to download but button seems to not be visible
+#   might need to activate javascript?
+
+# (1130) learned that chrome might be a better browser for this project due to extendend HTML stuff
+#   however, I was able to use it to find the xpath ("//*[@id="element3-footer-8600"]/div")
+#   considering changing to chrome for better options but must research more
+
+# (430) I have been working on this for about an hour and half now and I can comfortably say I finally
+#   got the download button working. It now saves to the correct directory
+#   Now I can finally move onto the other part of the program like making sure the data is fresh
+#   I can also now start working on making a graph with the data
+#   Both of these tasks shouldn't be too hard
+
+# (1/17) Worked through the rest of the project. 
+#  Got the graph working although needs some modification on the axes
+#  Got the bot to post to Twitter. Still need to add functionality to post images
+#  For the future, may want to do daily reports of number of new cases or % changes for other stats
+#  May also want to download the other data and align it with the current dataset
